@@ -131,9 +131,11 @@ function App() {
             <div className='w-full'>
               <h1 className='font-bold text-black text-3xl sm:text-4xl md:text-5xl'>Partner with Us</h1>
               <br />
-              <p><strong>Marvel Snappers Assemble</strong> offers brands and organizations an extraordinary platform to embrace the power of inclusivity in eSports. Organized by <strong><a href='https://www.eresports.com'>ER Esports</a></strong>, this groundbreaking event serves as a rallying point for those seeking to tap into the expansive and diverse community of gamers in Asia. </p>
+              <p>
+                Organized by <strong><a href='https://www.eresports.om'>ER Esports</a></strong>, this groundbreaking event serves as a rallying point for those seeking to tap into the diverse community of gamers in Asia-Pacific, Europe and the Americas.
+              </p>
               <br />
-              <p><strong>Marvel Snappers Assemble</strong> offers a variety of partnership opportunities tailored to suit the objectives and aspirations of each brand. From event sponsorship to customized activations, brands can collaborate with the ER Esports to create impactful experiences that align with their core values and resonate with the eSports community.</p>
+              <p><strong>Marvel Snappers Assemble</strong> offers a variety of partnership opportunities tailored to suit the objectives and aspirations of each brand. From event sponsorship to customized activations, brands can collaborate with the ER Esports team to create impactful experiences that align with their core values and resonate with the eSports community.</p>
             </div>
           </div>
         </section>

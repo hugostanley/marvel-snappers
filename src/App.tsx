@@ -22,7 +22,7 @@ const FAQs = [
   },
   {
     question: "Where are the offline semifinals going to be held?",
-    answer: <>Qualified participants will compete for semifinals offline in Cyberport, Hong Kong. {<br />}{<br />} Overseas participants (non-Hong Kong residents) qualified for the quarterfinals will receive flight & hotel allowants. Participants are responsible for making their own travel arrangements including but not limited to visa applications.</>
+    answer: <>Qualified participants will compete for semifinals offline in Cyberport, Hong Kong. {<br />}{<br />} Overseas participants (non-Hong Kong residents) qualified for the quarterfinals will receive flight & hotel allowance. Participants are responsible for making their own travel arrangements including but not limited to visa applications.</>
   },
 ]
 

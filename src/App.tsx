@@ -3,12 +3,12 @@ import Card from './components/Card'
 import LeftHero from './assets/left-hero.png'
 import Logo from './assets/logo.png'
 import RightHero from './assets/right-hero.png'
-import Countdown from 'react-countdown'
 import ERLogo from './assets/erlogo.png'
 import Cyberport from './assets/cyberport.png'
 import { FaWpforms, FaUserClock } from 'react-icons/fa'
 import Dropdown from './components/Dropdown'
 import { BsFacebook, BsInstagram, BsYoutube, BsDiscord } from 'react-icons/bs'
+import MarvelSnapCountDown from './components/Renderer'
 
 const EVENT_DATE = new Date("July 26, 2023 24:00:00")
 const FAQs = [
@@ -26,37 +26,6 @@ const FAQs = [
   },
 ]
 
-const Completionist = () => <span className='font-banger'>Happening now!</span>;
-
-const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
-  if (completed) {
-    // Render a completed state
-    return <Completionist />;
-  } else {
-    // Render a countdown
-    return (
-      <div className='flex justify-between gap-10 font-banger text-md sm:text-xl md:text-2xl'>
-        <div className='flex flex-col items-center'>
-          <span>{days.toLocaleString('en-US', { minimumIntegerDigits: 2 })}</span>
-          <span>Days</span>
-        </div>
-        <div className='flex flex-col items-center'>
-          <span>{hours.toLocaleString('en-US', { minimumIntegerDigits: 2 })}</span>
-          <span>Hours</span>
-        </div>
-        <div className='flex flex-col items-center'>
-          <span>{minutes.toLocaleString('en-US', { minimumIntegerDigits: 2 })}</span>
-          <span>Minutes</span>
-        </div>
-        <div className='flex flex-col items-center'>
-          <span>{seconds.toLocaleString('en-US', { minimumIntegerDigits: 2 })}</span>
-          <span>Seconds</span>
-        </div>
-      </div>
-
-    )
-  }
-};
 
 export interface IDropdown {
   idx: number;
@@ -76,21 +45,19 @@ function App() {
 
   return (
     <>
-      <header className='w-full bg-orion-nebula h-screen bg-no-repeat bg-center bg-cover flex justify-between items-center text-white'>
-        <div className='self-end'>
-          <img src={LeftHero} className='w-[30vw] h-auto lg:w-auto lg:h-screen' />
+      <header className='w-full relative bg-orion-nebula h-screen bg-no-repeat bg-center bg-cover flex justify-center items-center text-white'>
+        <div className='absolute left-0 bottom-0'>
+          <img src={LeftHero} className='w-[25vw] h-auto lg:w-auto lg:h-screen' />
         </div>
-        <div className='flex flex-col items-center h-[90%] justify-evenly'>
-          <div>
-            <Countdown date={EVENT_DATE} renderer={renderer} />
-          </div>
-          <img src={Logo} className='h-auto w-[20rem] lg:w-[28rem]' />
-          <div className='cursor-pointer bg-red-button bg-contain bg-center bg-no-repeat flex items-center justify-center w-40 h-20 sm:w-48 md:w-52 lg:w-64 group font-banger'>
-            <h1 className='text-xl sm:text-2xl md:text-3xl'><a href="https://docs.google.com/forms/d/e/1FAIpQLSeTsSBlBm5XEilcxhhx5JqRrII4Q6wWy3U3z3SvV-TV-aKbag/viewform">Register now</a></h1>
+        <div className='flex flex-col items-center h-[90%] justify-center gap-10'>
+          <MarvelSnapCountDown date={EVENT_DATE} />
+          <img src={Logo} className='logo-appear lg:w-[28rem]' />
+          <div className='button-breathe cursor-pointer bg-red-button bg-contain bg-center bg-no-repeat flex items-center justify-center w-44 h-20 sm:w-48 md:w-52 lg:w-64 group font-banger'>
+            <h1 className='text-2xl sm:text-2xl md:text-3xl'><a href="https://docs.google.com/forms/d/e/1FAIpQLSeTsSBlBm5XEilcxhhx5JqRrII4Q6wWy3U3z3SvV-TV-aKbag/viewform">Register now</a></h1>
           </div>
         </div>
-        <div className='self-end'>
-          <img src={RightHero} className='w-[30vw] h-auto lg:w-auto lg:h-screen' />
+        <div className='absolute right-0 bottom-0'>
+          <img src={RightHero} className='w-[25vw] h-auto lg:w-auto lg:h-screen' />
         </div>
       </header>
       <main>
@@ -121,7 +88,7 @@ function App() {
           ))}
         </section>
         <section className='w-full py-20 px-10 flex flex-col items-center gap-10 text-gray-500'>
-          <h1 className='text-xl md:text-xl font-medium'>Powered by</h1>
+          <h1 className='text-sm md:text-md font-medium'>Powered by</h1>
           <div className='flex w-full justify-center gap-16 sm:gap-20 md:gap-28 '>
             <img className='h-20 w-auto ' src={ERLogo} />
             <img className='h-20 w-auto ' src={Cyberport} />

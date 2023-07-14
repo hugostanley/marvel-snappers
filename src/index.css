@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+.button-breathe {
+  animation: buttonScale 2000ms infinite ease;
+}
+
+@keyframes buttonScale {
+0% {
+  scale: 1;
+}
+
+50% {
+  scale: 1.1;
+}
+
+100% {
+  scale: 1;
+}
+}
+.logo-appear {
+  animation: logoAppear 500ms forwards ease;
+}
+
+@keyframes logoAppear {
+  0% {
+  height: auto;
+  width: 0;
+}
+  100% {
+  height: auto;
+  width: 23rem;
+}
+}
+
 .open {
   animation: open forwards 200ms ease;
 }

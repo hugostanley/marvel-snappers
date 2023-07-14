@@ -1,14 +1,14 @@
-// @ts-nocheck
 import { useState } from 'react'
+import Card from './components/Card'
 import LeftHero from './assets/left-hero.png'
 import Logo from './assets/logo.png'
 import RightHero from './assets/right-hero.png'
 import Countdown from 'react-countdown'
 import ERLogo from './assets/erlogo.png'
 import Cyberport from './assets/cyberport.png'
-import { FaChevronDown, FaWpforms, FaUserClock } from 'react-icons/fa'
+import { FaWpforms, FaUserClock } from 'react-icons/fa'
+import Dropdown from './components/Dropdown'
 import { BsFacebook, BsInstagram, BsYoutube, BsDiscord } from 'react-icons/bs'
-import { BiGame } from 'react-icons/bi'
 
 const EVENT_DATE = new Date("July 26, 2023 24:00:00")
 const FAQs = [
@@ -26,12 +26,9 @@ const FAQs = [
   },
 ]
 
-// Random component
-const Completionist = () => <span>You are good to go!</span>;
+const Completionist = () => <span className='font-banger'>Happening now!</span>;
 
-// Renderer callback with condition
-
-const renderer = ({ days, hours, minutes, seconds, completed }) => {
+const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
   if (completed) {
     // Render a completed state
     return <Completionist />;
@@ -61,8 +58,13 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   }
 };
 
+export interface IDropdown {
+  idx: number;
+  isOpen: boolean;
+}
+
 function App() {
-  const [dropwdown, setDropdown] = useState({
+  const [dropwdown, setDropdown] = useState<IDropdown>({
     idx: -1,
     isOpen: false
   })
@@ -100,15 +102,15 @@ function App() {
         <section className='w-full bg-orion-nebula gap-20 bg-cover bg-center text-white flex py-20 flex-col px-10 lg:px-20 lg:py-32'>
           <h1 className='text-3xl font-bold text-center sm:text-4xl md:text-5xl'>How to join?</h1>
           <div className='w-full flex flex-col justify-center lg:flex-row'>
-            <Card title='1. Register via Google Form' icon={<FaWpforms className="text-8xl" />} para="Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat." />
-            <Card title='2. Wait for the invite to the tournament Discord Channel' icon={<BsDiscord className="text-8xl" />} para="Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat." />
-            <Card title='3. Prepare your decks' icon={<FaUserClock className="text-8xl" />} para="Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat." />
+            <Card title='1. Register via Google Form' icon={<FaWpforms className="text-8xl" />} />
+            <Card title='2. Wait for the invite to the tournament Discord Channel' icon={<BsDiscord className="text-8xl" />} />
+            <Card title='3. Prepare your decks' icon={<FaUserClock className="text-8xl" />} />
           </div>
         </section>
         <section className='w-full px-10 bg-news bg-cover bg-no-repeat bg-center py-20 flex flex-col gap-10 items-center lg:py-32'>
           <h1 className='text-3xl md:text-4xl font-bold text-purple'>FREQUENTLY ASKED QUESTIONS</h1>
           {FAQs.map((item, idx) => (
-            <DropDown
+            <Dropdown
               question={item.question}
               answer={item.answer}
               handleClick={handleClick}
@@ -121,8 +123,8 @@ function App() {
         <section className='w-full py-20 px-10 flex flex-col items-center gap-10 text-gray-500'>
           <h1 className='text-xl md:text-xl font-medium'>Powered by</h1>
           <div className='flex w-full justify-center gap-16 sm:gap-20 md:gap-28 '>
-            <img className='h-20 w-auto ' src={ERLogo}/>
-            <img className='h-20 w-auto ' src={Cyberport}/>
+            <img className='h-20 w-auto ' src={ERLogo} />
+            <img className='h-20 w-auto ' src={Cyberport} />
           </div>
 
         </section>
@@ -177,28 +179,5 @@ function App() {
   )
 }
 
-function DropDown({ state, question, answer, handleClick, index }) {
-  return (
-    <div className='w-full lg:w-[75%] bg-white shadow-lg border border-purple py-10 rounded-xl flex flex-col px-10 justify-between gap-2 cursor-pointer' onClick={() => handleClick(index)}>
-      <div className='flex justify-between w-full items-center gap-6'>
-        <p className='text-xl font-bold text-purple'>{question}</p>
-        <FaChevronDown className={`cursor-pointer text-purple ${state.idx === index && state.isOpen ? 'open' : 'close'}`} />
-      </div>
-      {state.isOpen && state.idx === index && (
-        <p className='text-sm text-gray-700'>{answer}</p>
-      )}
-    </div>
-
-  )
-}
-
-function Card({ title, para, icon }: { title: string, para: string }) {
-  return (
-    <div className='py-10 flex flex-col justify-start items-center gap-4 lg:px-10'>
-      {icon}
-      <h1 className='font-bold text-xl text-center'>{title}</h1>
-    </div>
-  )
-}
 
 export default App

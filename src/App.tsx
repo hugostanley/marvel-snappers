@@ -124,19 +124,24 @@ function App() {
         </section>
       </main>
       <footer className='w-full relative flex h-56 flex-col justify-end relaive'>
-        <div className='w-full bg-footer bg-no-repeat bg-cover h-72 bg-center absolute flex flex-col gap-2 justify-end items-center py-10'>
-          <div className='z-50 text-white flex text-2xl gap-4 items-center'>
-            <a href="https://www.facebook.com/EREsports.official">
-              <BsFacebook />
-            </a>
-            <a href="https://www.instagram.com/eresportsnews/">
-              <BsInstagram />
-            </a>
-            <a href="https://youtube.com/@eresports1897">
-              <BsYoutube />
-            </a>
+        <div className='w-full bg-footer bg-no-repeat bg-cover h-72 bg-center absolute flex flex-col gap-2 justify-between items-center py-10'>
+          <div className='flex flex-col items-center gap-6'>
+            <div>
+              <h4 className='text-2xl font-banger text-white'>Follow us</h4>
+            </div>
+            <div className='z-50 text-white flex text-2xl gap-4 items-end'>
+              <a href="https://m.facebook.com/EResportsNews">
+                <BsFacebook />
+              </a>
+              <a href="https://www.instagram.com/eresportsnews/">
+                <BsInstagram />
+              </a>
+              <a href="https://youtube.com/@eresports1897">
+                <BsYoutube />
+              </a>
+            </div>
           </div>
-          <div className='text-gray-700 z-50 text-center text-xs'>
+          <div className='text-gray-500 z-50 text-center text-xs'>
             <p><a href='https://eresports.com/privacy-policy/'>Privacy Policy</a> | <a href='https://eresports.com/terms-of-use/'>Terms of Use</a> </p>
             <p>Copyright © 2023 ERESPORTS LIMITED. All Rights Reserved</p>
           </div>

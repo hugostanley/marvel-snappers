@@ -10,7 +10,7 @@ import Dropdown from './components/Dropdown'
 import { BsFacebook, BsInstagram, BsYoutube, BsDiscord } from 'react-icons/bs'
 import MarvelSnapCountDown from './components/Renderer'
 
-const EVENT_DATE = new Date("July 26, 2023 24:00:00")
+const EVENT_DATE = new Date("July 26, 2023 15:00:00")
 const FAQs = [
   {
     question: "Who is eligble to join?",
